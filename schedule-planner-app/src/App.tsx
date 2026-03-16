@@ -447,7 +447,7 @@ function ScheduleBuilder({
 
   return (
     <DndContext sensors={sensors} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-      <div className="min-h-screen flex flex-col">
+      <div className="flex flex-col flex-1">
         <header className="bg-garden-700 text-white shadow-lg">
           <div className="max-w-[1600px] mx-auto px-4 py-4 flex items-center justify-between">
             <ScheduleHeader gradeProfile={gradeProfile} onGradeChange={handleGradeChange} />
@@ -540,7 +540,6 @@ function ScheduleBuilder({
           </div>
         </div>
 
-        <BuildFooter />
       </div>
 
       <DragOverlay>
@@ -632,17 +631,20 @@ export default function App() {
   return (
     <>
       <MobileGate />
-      <div className="hidden md:block">
-        {!activeProfile ? (
-          <ProfilePicker
-            profiles={profiles}
-            onSelectProfile={handleSelectProfile}
-            onCreateProfile={handleCreateProfile}
-            onDeleteProfile={handleDeleteProfile}
-          />
-        ) : (
-          <ScheduleBuilder key={activeProfile.id} profile={activeProfile} onSwitchProfile={handleSwitchProfile} />
-        )}
+      <div className="hidden md:flex md:flex-col md:min-h-screen">
+        <div className="flex-1">
+          {!activeProfile ? (
+            <ProfilePicker
+              profiles={profiles}
+              onSelectProfile={handleSelectProfile}
+              onCreateProfile={handleCreateProfile}
+              onDeleteProfile={handleDeleteProfile}
+            />
+          ) : (
+            <ScheduleBuilder key={activeProfile.id} profile={activeProfile} onSwitchProfile={handleSwitchProfile} />
+          )}
+        </div>
+        <BuildFooter />
       </div>
     </>
   );
