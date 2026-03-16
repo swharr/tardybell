@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# Python
+__pycache__/
+.venv/
+*.pyc
+
+# Parcel (legacy)
+.parcel-cache/
+.parcelrc
+
+# Source data & working files (not app code)
+starting up/
+/data/
+*.xlsx
+~$*
+
+# Generated artifacts
+bundle.html
+
+# Scratch / planning
+implementation_plan.md
+generate_data.py
+inspect_excel.py
+
+# PDFs (source docs, not app)
+*.pdf
+
+# Converted docs
+Course Descriptions Linked to Website.md
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.local
+.env.*.local

@@ -1,0 +1,1458 @@
+[
+  {
+    "workbookLabel": "& AP Comp Sci A",
+    "normalizedWorkbookLabel": "and ap computer science a",
+    "canonicalCourseId": "ap-computer-science-a",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "& Data Structures CE",
+    "normalizedWorkbookLabel": "and data structures ce",
+    "canonicalCourseId": "algorithms-and-data-structures",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "2d Art",
+    "normalizedWorkbookLabel": "2d art",
+    "canonicalCourseId": "2d-art",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "3-d Art",
+    "normalizedWorkbookLabel": "3-d art",
+    "canonicalCourseId": "2d-art",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "3-d Graphics &",
+    "normalizedWorkbookLabel": "3-d graphics and",
+    "canonicalCourseId": "3d-graphics",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP Art And Design",
+    "normalizedWorkbookLabel": "ap art and design",
+    "canonicalCourseId": "ap-art-drawing-2d-design",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "AP Art History",
+    "normalizedWorkbookLabel": "ap art history",
+    "canonicalCourseId": "ap-art-history",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP Biology/ce",
+    "normalizedWorkbookLabel": "ap biology/ce",
+    "canonicalCourseId": "ap-biology",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "AP Calc Ab",
+    "normalizedWorkbookLabel": "ap calc ab",
+    "canonicalCourseId": "ap-calculus-ab",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "AP Calc Bc",
+    "normalizedWorkbookLabel": "ap calc bc",
+    "canonicalCourseId": "ap-calculus-bc",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "AP Chemistry",
+    "normalizedWorkbookLabel": "ap chemistry",
+    "canonicalCourseId": "ap-chemistry",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP Economics",
+    "normalizedWorkbookLabel": "ap economics",
+    "canonicalCourseId": "ap-biology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP English Lang 11",
+    "normalizedWorkbookLabel": "ap english language 11",
+    "canonicalCourseId": "ap-english-language-and-composition",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "AP English Lit 12",
+    "normalizedWorkbookLabel": "ap english literacy 12",
+    "canonicalCourseId": "ap-english-literacy",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP Euro History",
+    "normalizedWorkbookLabel": "ap euro history",
+    "canonicalCourseId": "ap-european-history",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "AP Music Theory",
+    "normalizedWorkbookLabel": "ap music theory",
+    "canonicalCourseId": "ap-music-theory",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP Physics 1",
+    "normalizedWorkbookLabel": "ap physics 1",
+    "canonicalCourseId": "ap-physics-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP Psychology",
+    "normalizedWorkbookLabel": "ap psychology",
+    "canonicalCourseId": "ap-psychology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP Spanish",
+    "normalizedWorkbookLabel": "ap spanish",
+    "canonicalCourseId": "ap-spanish",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "AP Statistics",
+    "normalizedWorkbookLabel": "ap statistics",
+    "canonicalCourseId": "ap-stats",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "AP US Gov & Politics",
+    "normalizedWorkbookLabel": "ap us government and politics",
+    "canonicalCourseId": "ap-government-and-politics",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "AP US History",
+    "normalizedWorkbookLabel": "ap us history",
+    "canonicalCourseId": "ap-us-history",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "ASL 1",
+    "normalizedWorkbookLabel": "asl 1",
+    "canonicalCourseId": "asl-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "ASL 2",
+    "normalizedWorkbookLabel": "asl 2",
+    "canonicalCourseId": "asl-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "ASL 3",
+    "normalizedWorkbookLabel": "asl 3",
+    "canonicalCourseId": "asl-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Accounting 1/2",
+    "normalizedWorkbookLabel": "accounting 1/2",
+    "canonicalCourseId": "accounting-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Adult Transitions",
+    "normalizedWorkbookLabel": "adult transitions",
+    "canonicalCourseId": "english-12:-adult-transitions",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Adv Comp Prog CE",
+    "normalizedWorkbookLabel": "advanced computer programming ce",
+    "canonicalCourseId": "computer-programming-advanced",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Adv Wind Symphony",
+    "normalizedWorkbookLabel": "advanced wind symphony",
+    "canonicalCourseId": "advanced-wind-symphony",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Adv. 3d Art",
+    "normalizedWorkbookLabel": "advanced 3d art",
+    "canonicalCourseId": "3d-art",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Adv. Dance Tech And Coreography",
+    "normalizedWorkbookLabel": "advanced dance tech and coreography",
+    "canonicalCourseId": "advanced-dance-technique-and-choreography-la-dance-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Adv. Jazz Band",
+    "normalizedWorkbookLabel": "advanced jazz band",
+    "canonicalCourseId": "jazz-band",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Adv. Studio Art",
+    "normalizedWorkbookLabel": "advanced studio art",
+    "canonicalCourseId": "advanced-studio-art",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Adv.stage Crew",
+    "normalizedWorkbookLabel": "advanced stage crew",
+    "canonicalCourseId": "advanced-wind-symphony",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Advanced Orchestra",
+    "normalizedWorkbookLabel": "advanced orchestra",
+    "canonicalCourseId": "advanced-wind-symphony",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Advertising Des.",
+    "normalizedWorkbookLabel": "advertising design",
+    "canonicalCourseId": "advertising-design",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Algorithms",
+    "normalizedWorkbookLabel": "algorithms",
+    "canonicalCourseId": "algorithms-and-data-structures",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Animal Science",
+    "normalizedWorkbookLabel": "animal science",
+    "canonicalCourseId": "animal-science-i-cip:-02-0211",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Animal Science 1",
+    "normalizedWorkbookLabel": "animal science 1",
+    "canonicalCourseId": "ap-physics-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Aquaculture",
+    "normalizedWorkbookLabel": "aquaculture",
+    "canonicalCourseId": "aquaculture-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Aria",
+    "normalizedWorkbookLabel": "aria",
+    "canonicalCourseId": "aria-acapella-sa",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Art Foundations",
+    "normalizedWorkbookLabel": "art foundations",
+    "canonicalCourseId": "art-foundations-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Art History 1010 CE",
+    "normalizedWorkbookLabel": "art history 1010 ce",
+    "canonicalCourseId": "art-history-1010",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Art Honors (year)",
+    "normalizedWorkbookLabel": "art honors (year)",
+    "canonicalCourseId": "art-honors",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Baking/pastry",
+    "normalizedWorkbookLabel": "baking/pastry",
+    "canonicalCourseId": "baking-and-pastry",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Ballroom Team",
+    "normalizedWorkbookLabel": "ballroom team",
+    "canonicalCourseId": "la-ballroom-team",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Baseball - Nelson",
+    "normalizedWorkbookLabel": "baseball - nelson",
+    "canonicalCourseId": "latinos-in-action-(lia---peer-leaders)-uslssl",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Biology",
+    "normalizedWorkbookLabel": "biology",
+    "canonicalCourseId": "biology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Biotechnology CE",
+    "normalizedWorkbookLabel": "biotechnology ce",
+    "canonicalCourseId": "biotechnology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Boys Basketball",
+    "normalizedWorkbookLabel": "boys basketball",
+    "canonicalCourseId": "boys-basketball",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Boys Golf",
+    "normalizedWorkbookLabel": "boys golf",
+    "canonicalCourseId": "boys-golf",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Bus Office Spec CE DL",
+    "normalizedWorkbookLabel": "bus office spec ce dl",
+    "canonicalCourseId": "business-office-specialist",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "CTE Internships",
+    "normalizedWorkbookLabel": "cte internships",
+    "canonicalCourseId": "internship",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Calc Lab",
+    "normalizedWorkbookLabel": "calc lab",
+    "canonicalCourseId": "lab-calculus",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Ceramics 1",
+    "normalizedWorkbookLabel": "ceramics 1",
+    "canonicalCourseId": "ceramics-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Ceramics 1:",
+    "normalizedWorkbookLabel": "ceramics 1:",
+    "canonicalCourseId": "ceramics-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Ceramics 1: Hand Building",
+    "normalizedWorkbookLabel": "ceramics 1: hand building",
+    "canonicalCourseId": "ceramics-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Ceramics 2/3",
+    "normalizedWorkbookLabel": "ceramics 2/3",
+    "canonicalCourseId": "ceramics-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Chamber Choir",
+    "normalizedWorkbookLabel": "chamber choir",
+    "canonicalCourseId": "chamber-choir",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Chamber Orchestra",
+    "normalizedWorkbookLabel": "chamber orchestra",
+    "canonicalCourseId": "chamber-choir",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Cheerleading",
+    "normalizedWorkbookLabel": "cheerleading",
+    "canonicalCourseId": "la-cheer",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Chemistry",
+    "normalizedWorkbookLabel": "chemistry",
+    "canonicalCourseId": "chemistry",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Child Development",
+    "normalizedWorkbookLabel": "child development",
+    "canonicalCourseId": "child-development",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "College Writ Engl 1010 CE",
+    "normalizedWorkbookLabel": "college writ engl 1010 ce",
+    "canonicalCourseId": "art-history-1010",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Computer Programming 1",
+    "normalizedWorkbookLabel": "computer programming 1",
+    "canonicalCourseId": "computer-programming-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Computer Programming 2 CE",
+    "normalizedWorkbookLabel": "computer programming 2 ce",
+    "canonicalCourseId": "computer-programming-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Computer Science Principles",
+    "normalizedWorkbookLabel": "computer science principles",
+    "canonicalCourseId": "computer-science-principles",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Computer Systems Ce1/2",
+    "normalizedWorkbookLabel": "computer systems ce1/2",
+    "canonicalCourseId": "computer-systems-1---2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Constr. Tech",
+    "normalizedWorkbookLabel": "constr tech",
+    "canonicalCourseId": "weld-tech-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Creative Writing 1",
+    "normalizedWorkbookLabel": "creative writing 1",
+    "canonicalCourseId": "ap-physics-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Cross Country",
+    "normalizedWorkbookLabel": "cross country",
+    "canonicalCourseId": "cross-country",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Culinary 1",
+    "normalizedWorkbookLabel": "culinary 1",
+    "canonicalCourseId": "culinary-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Culinary 2",
+    "normalizedWorkbookLabel": "culinary 2",
+    "canonicalCourseId": "culinary-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Cyber Defense CE",
+    "normalizedWorkbookLabel": "cyber defense ce",
+    "canonicalCourseId": "principles-of-cyber-defense",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Dance 1",
+    "normalizedWorkbookLabel": "dance 1",
+    "canonicalCourseId": "la-dance-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Data Science",
+    "normalizedWorkbookLabel": "data science",
+    "canonicalCourseId": "computer-science-principles",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Digital Audio1/2",
+    "normalizedWorkbookLabel": "digital audio1/2",
+    "canonicalCourseId": "digital-business-applications",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Digital Media CE",
+    "normalizedWorkbookLabel": "digital media ce",
+    "canonicalCourseId": "digital-media-1-and-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Digital Photo 1",
+    "normalizedWorkbookLabel": "digital photo 1",
+    "canonicalCourseId": "digital-photo-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Digital Photo 2",
+    "normalizedWorkbookLabel": "digital photo 2",
+    "canonicalCourseId": "digital-photo-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Drama 1",
+    "normalizedWorkbookLabel": "drama 1",
+    "canonicalCourseId": "drama-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Drama 2",
+    "normalizedWorkbookLabel": "drama 2",
+    "canonicalCourseId": "drama-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Drama 3",
+    "normalizedWorkbookLabel": "drama 3",
+    "canonicalCourseId": "drama-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Drama 4",
+    "normalizedWorkbookLabel": "drama 4",
+    "canonicalCourseId": "drama-4",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Drawing 1 CE",
+    "normalizedWorkbookLabel": "drawing 1 ce",
+    "canonicalCourseId": "drawing",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Drawing 2 CE",
+    "normalizedWorkbookLabel": "drawing 2 ce",
+    "canonicalCourseId": "drawing",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Early Child Ed 1&2",
+    "normalizedWorkbookLabel": "early child ed 1 and 2",
+    "canonicalCourseId": "digital-audio-1-and-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Early Child Ed 3",
+    "normalizedWorkbookLabel": "early child ed 3",
+    "canonicalCourseId": "asl-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Eld 1",
+    "normalizedWorkbookLabel": "eld 1",
+    "canonicalCourseId": "english-second-language-study-skills",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Eld 2",
+    "normalizedWorkbookLabel": "eld 2",
+    "canonicalCourseId": "english-second-language-study-skills",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Eld 3",
+    "normalizedWorkbookLabel": "eld 3",
+    "canonicalCourseId": "english-second-language-study-skills",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Eld 4",
+    "normalizedWorkbookLabel": "eld 4",
+    "canonicalCourseId": "english-second-language-study-skills",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Emr CE",
+    "normalizedWorkbookLabel": "emr ce",
+    "canonicalCourseId": "emergency-medical-responder-(emr)-introduction-ems",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Eng 12: Fantasy/",
+    "normalizedWorkbookLabel": "english 12: fantasy/",
+    "canonicalCourseId": "english-12:-creat-writ",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "English 10",
+    "normalizedWorkbookLabel": "english 10",
+    "canonicalCourseId": "english-10",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "English 10 H",
+    "normalizedWorkbookLabel": "english 10 h",
+    "canonicalCourseId": "english-10",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "English 10 Mulligan",
+    "normalizedWorkbookLabel": "english 10 mulligan",
+    "canonicalCourseId": "english-10",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "English 11",
+    "normalizedWorkbookLabel": "english 11",
+    "canonicalCourseId": "english-11",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "English 11 Byington",
+    "normalizedWorkbookLabel": "english 11 byington",
+    "canonicalCourseId": "english-11",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Exercise Science/ Sports Medicine CE",
+    "normalizedWorkbookLabel": "exercise science/ sports medicine ce",
+    "canonicalCourseId": "sports-history",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Exploring Computer Science",
+    "normalizedWorkbookLabel": "exploring computer science",
+    "canonicalCourseId": "exploring-computer-science",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Fashion Design 1",
+    "normalizedWorkbookLabel": "fashion design 1",
+    "canonicalCourseId": "fashion-design",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Film Literature",
+    "normalizedWorkbookLabel": "film literature",
+    "canonicalCourseId": "english-12:-film-literacy",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Financial Literacy",
+    "normalizedWorkbookLabel": "financial literacy",
+    "canonicalCourseId": "financial-literacy",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Fitness F",
+    "normalizedWorkbookLabel": "fitness f",
+    "canonicalCourseId": "fitness",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Fitness M",
+    "normalizedWorkbookLabel": "fitness m",
+    "canonicalCourseId": "fitness",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Floriculture",
+    "normalizedWorkbookLabel": "floriculture",
+    "canonicalCourseId": "floral-design",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Football",
+    "normalizedWorkbookLabel": "football",
+    "canonicalCourseId": "football",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Game Dev CE 1/2",
+    "normalizedWorkbookLabel": "game dev ce 1/2",
+    "canonicalCourseId": "gaming-development-fundamentals-1-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "German 1/2/3",
+    "normalizedWorkbookLabel": "german 1/2/3",
+    "canonicalCourseId": "german-1-2-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "German 3/4 CE",
+    "normalizedWorkbookLabel": "german 3/4 ce",
+    "canonicalCourseId": "german-1-2-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Girls Basketball",
+    "normalizedWorkbookLabel": "girls basketball",
+    "canonicalCourseId": "girls-basketball",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Girls Golf",
+    "normalizedWorkbookLabel": "girls golf",
+    "canonicalCourseId": "girls-golf",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Girls Soccer",
+    "normalizedWorkbookLabel": "girls soccer",
+    "canonicalCourseId": "girls-soccer",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Girls Softball",
+    "normalizedWorkbookLabel": "girls softball",
+    "canonicalCourseId": "girls-softball",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Government & Citizenship",
+    "normalizedWorkbookLabel": "government and citizenship",
+    "canonicalCourseId": "government-and-citizenship",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Greenhouse",
+    "normalizedWorkbookLabel": "greenhouse",
+    "canonicalCourseId": "greenhouse-management",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Guitar",
+    "normalizedWorkbookLabel": "guitar",
+    "canonicalCourseId": "guitar-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Health",
+    "normalizedWorkbookLabel": "health",
+    "canonicalCourseId": "health",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Holocaust/genocide",
+    "normalizedWorkbookLabel": "holocaust/genocide",
+    "canonicalCourseId": "the-holocaust-genocide-studies",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Humanities",
+    "normalizedWorkbookLabel": "humanities",
+    "canonicalCourseId": "english-12:-humanities",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Ind/fam Relation",
+    "normalizedWorkbookLabel": "ind/fam relation",
+    "canonicalCourseId": "individual-and-family-relationships",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Influencer And Content Marketing",
+    "normalizedWorkbookLabel": "influencer and content marketing",
+    "canonicalCourseId": "influence-and-content-marketing",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Interior Design 1",
+    "normalizedWorkbookLabel": "interior design 1",
+    "canonicalCourseId": "interior-design-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Interior Design 2",
+    "normalizedWorkbookLabel": "interior design 2",
+    "canonicalCourseId": "interior-design-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Intermediate Orchestra",
+    "normalizedWorkbookLabel": "intermediate orchestra",
+    "canonicalCourseId": "math-1010-intermediate-algebra",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Intrm.",
+    "normalizedWorkbookLabel": "intrm",
+    "canonicalCourseId": "intermediate-advanced-percussion",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Intro Drama & Film",
+    "normalizedWorkbookLabel": "intro drama and film",
+    "canonicalCourseId": "intro-to-drama-and-film",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Intro To Health Sci",
+    "normalizedWorkbookLabel": "intro to health science",
+    "canonicalCourseId": "intro-to-health-science",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Intro To It CE",
+    "normalizedWorkbookLabel": "intro to it ce",
+    "canonicalCourseId": "intro-to-health-science",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Japanese 1",
+    "normalizedWorkbookLabel": "japanese 1",
+    "canonicalCourseId": "japanese-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Japanese 2",
+    "normalizedWorkbookLabel": "japanese 2",
+    "canonicalCourseId": "japanese-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "LA Dance Co. (tdt)",
+    "normalizedWorkbookLabel": "la dance co (tdt)",
+    "canonicalCourseId": "la-dance-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Latinos In Action CE",
+    "normalizedWorkbookLabel": "latinos in action ce",
+    "canonicalCourseId": "latinos-in-action-(lia---peer-leaders)-uslssl",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Law Enforcement",
+    "normalizedWorkbookLabel": "law enforcement",
+    "canonicalCourseId": "law-enforcement",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Life Activity",
+    "normalizedWorkbookLabel": "life activity",
+    "canonicalCourseId": "life-activ-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Linux Fund CE",
+    "normalizedWorkbookLabel": "linux fund ce",
+    "canonicalCourseId": "linux-fundamentals",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Marching Band After School",
+    "normalizedWorkbookLabel": "marching band after school",
+    "canonicalCourseId": "marching-band",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Math 1010/1050 CE",
+    "normalizedWorkbookLabel": "math 1010/1050 ce",
+    "canonicalCourseId": "math-decision-making",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Math Decision",
+    "normalizedWorkbookLabel": "math decision",
+    "canonicalCourseId": "math-decision-making",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Medanatomy Ivc",
+    "normalizedWorkbookLabel": "medanatomy ivc",
+    "canonicalCourseId": "medical-anatomy-physiology",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Medical Anatomy & Physiology",
+    "normalizedWorkbookLabel": "medical anatomy and physiology",
+    "canonicalCourseId": "medical-anatomy-physiology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Medical Term",
+    "normalizedWorkbookLabel": "medical term",
+    "canonicalCourseId": "medical-terminology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Medical Terminology CE",
+    "normalizedWorkbookLabel": "medical terminology ce",
+    "canonicalCourseId": "medical-terminology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Meteorology CE",
+    "normalizedWorkbookLabel": "meteorology ce",
+    "canonicalCourseId": "meteorology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Music Apprecation",
+    "normalizedWorkbookLabel": "music apprecation",
+    "canonicalCourseId": "music-appreciation",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Music Appreciation CE",
+    "normalizedWorkbookLabel": "music appreciation ce",
+    "canonicalCourseId": "music-appreciation",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Music as Literature",
+    "normalizedWorkbookLabel": "music as literature",
+    "canonicalCourseId": "english-12:-music-as-literature",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Musical Theater",
+    "normalizedWorkbookLabel": "musical theater",
+    "canonicalCourseId": "musical-theater",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Natural Resources",
+    "normalizedWorkbookLabel": "natural resources",
+    "canonicalCourseId": "natural-resources",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Natural Resources 1",
+    "normalizedWorkbookLabel": "natural resources 1",
+    "canonicalCourseId": "natural-resources",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Pack",
+    "normalizedWorkbookLabel": "pack",
+    "canonicalCourseId": "pack",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Painting",
+    "normalizedWorkbookLabel": "painting",
+    "canonicalCourseId": "painting-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Painting 2",
+    "normalizedWorkbookLabel": "painting 2",
+    "canonicalCourseId": "painting-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Peer Tutor",
+    "normalizedWorkbookLabel": "peer tutor",
+    "canonicalCourseId": "peer-tutor",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Peer Tutor PE",
+    "normalizedWorkbookLabel": "peer tutor pe",
+    "canonicalCourseId": "peer-tutor-pe",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Physics",
+    "normalizedWorkbookLabel": "physics",
+    "canonicalCourseId": "physics",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Psychology",
+    "normalizedWorkbookLabel": "psychology",
+    "canonicalCourseId": "psychology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Read/write 10",
+    "normalizedWorkbookLabel": "read/write 10",
+    "canonicalCourseId": "english-10",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Read/write 11",
+    "normalizedWorkbookLabel": "read/write 11",
+    "canonicalCourseId": "english-11",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Retailing",
+    "normalizedWorkbookLabel": "retailing",
+    "canonicalCourseId": "retailing",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Sculpture",
+    "normalizedWorkbookLabel": "sculpture",
+    "canonicalCourseId": "sculpture",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Secondary Math 1",
+    "normalizedWorkbookLabel": "secondary math 1",
+    "canonicalCourseId": "secondary-math-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Secondary Math 2",
+    "normalizedWorkbookLabel": "secondary math 2",
+    "canonicalCourseId": "secondary-math-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Secondary Math 3 Ct",
+    "normalizedWorkbookLabel": "secondary math 3 ct",
+    "canonicalCourseId": "secondary-math-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Secondary Math I",
+    "normalizedWorkbookLabel": "secondary math i",
+    "canonicalCourseId": "secondary-math-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Secondary Math II Extended",
+    "normalizedWorkbookLabel": "secondary math 2 extended",
+    "canonicalCourseId": "secondary-math-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Secondary Math II Regular",
+    "normalizedWorkbookLabel": "secondary math 2 regular",
+    "canonicalCourseId": "secondary-math-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Secondary Math III Extended",
+    "normalizedWorkbookLabel": "secondary math 3 extended",
+    "canonicalCourseId": "secondary-math-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Secondary Math III Regular",
+    "normalizedWorkbookLabel": "secondary math 3 regular",
+    "canonicalCourseId": "secondary-math-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Seminary",
+    "normalizedWorkbookLabel": "seminary",
+    "canonicalCourseId": "release-time",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Seminary *",
+    "normalizedWorkbookLabel": "seminary",
+    "canonicalCourseId": "release-time",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Sewing 2",
+    "normalizedWorkbookLabel": "sewing 2",
+    "canonicalCourseId": "sewing-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Sociology",
+    "normalizedWorkbookLabel": "sociology",
+    "canonicalCourseId": "sociology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Sources Of Strength",
+    "normalizedWorkbookLabel": "sources of strength",
+    "canonicalCourseId": "sources-of-strength",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Spanish 1",
+    "normalizedWorkbookLabel": "spanish 1",
+    "canonicalCourseId": "spanish-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Spanish 2",
+    "normalizedWorkbookLabel": "spanish 2",
+    "canonicalCourseId": "spanish-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Spanish 3 CE",
+    "normalizedWorkbookLabel": "spanish 3 ce",
+    "canonicalCourseId": "spanish-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Spanish 4 CE",
+    "normalizedWorkbookLabel": "spanish 4 ce",
+    "canonicalCourseId": "spanish-4",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Spanish Bridge 3117",
+    "normalizedWorkbookLabel": "spanish bridge 3117",
+    "canonicalCourseId": "spanish-bridge",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Sports Conditioning",
+    "normalizedWorkbookLabel": "sports conditioning",
+    "canonicalCourseId": "sports-history",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Sports History",
+    "normalizedWorkbookLabel": "sports history",
+    "canonicalCourseId": "sports-history",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Sports Sewing 1",
+    "normalizedWorkbookLabel": "sports sewing 1",
+    "canonicalCourseId": "ap-physics-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Stage Craft",
+    "normalizedWorkbookLabel": "stage craft",
+    "canonicalCourseId": "stage-craft",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Stained Glass 1",
+    "normalizedWorkbookLabel": "stained glass 1",
+    "canonicalCourseId": "stained-glass-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Stained Glass 2",
+    "normalizedWorkbookLabel": "stained glass 2",
+    "canonicalCourseId": "stained-glass-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Student Council*",
+    "normalizedWorkbookLabel": "student council",
+    "canonicalCourseId": "student-council",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Swim Team",
+    "normalizedWorkbookLabel": "swim team",
+    "canonicalCourseId": "swim-team",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Symphonic Band",
+    "normalizedWorkbookLabel": "symphonic band",
+    "canonicalCourseId": "symphonic-band",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Tenor/bass Choir",
+    "normalizedWorkbookLabel": "tenor/bass choir",
+    "canonicalCourseId": "chamber-choir",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Track",
+    "normalizedWorkbookLabel": "track",
+    "canonicalCourseId": "track",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "US History",
+    "normalizedWorkbookLabel": "us history",
+    "canonicalCourseId": "us-history",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "US History CE",
+    "normalizedWorkbookLabel": "us history ce",
+    "canonicalCourseId": "us-history",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Vid Prod/tv Broad",
+    "normalizedWorkbookLabel": "vid prod/tv broad",
+    "canonicalCourseId": "video-production-tv-broadcasting-1",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Web Dev 2 CE",
+    "normalizedWorkbookLabel": "web dev 2 ce",
+    "canonicalCourseId": "asl-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Web Dev 2 CE Web Dev 3\"",
+    "normalizedWorkbookLabel": "web dev 2 ce web dev 3",
+    "canonicalCourseId": "asl-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Web Dev 3",
+    "normalizedWorkbookLabel": "web dev 3",
+    "canonicalCourseId": "asl-3",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Web Dev DL",
+    "normalizedWorkbookLabel": "web dev dl",
+    "canonicalCourseId": "web-development-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Weight Training (Co-ed)",
+    "normalizedWorkbookLabel": "weight training (co-ed)",
+    "canonicalCourseId": "weight-train",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Weight Training (F)",
+    "normalizedWorkbookLabel": "weight training (f)",
+    "canonicalCourseId": "weight-train",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Weight Training (M)",
+    "normalizedWorkbookLabel": "weight training (m)",
+    "canonicalCourseId": "weight-train",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Weld Tech 1/2",
+    "normalizedWorkbookLabel": "weld tech 1/2",
+    "canonicalCourseId": "weld-tech-1",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Weld Tech 2/3",
+    "normalizedWorkbookLabel": "weld tech 2/3",
+    "canonicalCourseId": "weld-tech-2",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "World Religions",
+    "normalizedWorkbookLabel": "world religions",
+    "canonicalCourseId": "world-religion",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Wrestling",
+    "normalizedWorkbookLabel": "wrestling",
+    "canonicalCourseId": "wrestling",
+    "status": "matched",
+    "notes": "explicit override"
+  },
+  {
+    "workbookLabel": "Yearbook* & \"ths Content Creation \"",
+    "normalizedWorkbookLabel": "yearbook and ths content creation",
+    "canonicalCourseId": "ths-content-creation",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Yoga Co-ed",
+    "normalizedWorkbookLabel": "yoga co-ed",
+    "canonicalCourseId": "yoga",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  },
+  {
+    "workbookLabel": "Zoology",
+    "normalizedWorkbookLabel": "zoology",
+    "canonicalCourseId": "zoology",
+    "status": "matched",
+    "notes": "auto-applied top suggestion"
+  }
+]
