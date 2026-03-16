@@ -108,9 +108,9 @@ export function CourseBrowser({ courses, gradeProfile, poolCourseNames, placedCo
             <button
               key={f.value}
               onClick={() => setFilter(prev => prev === f.value ? '' : f.value)}
-              className={`px-2 py-0.5 text-xs rounded-full whitespace-nowrap transition-colors ${
+              className={`px-2 py-0.5 text-xs rounded-full whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 filter === f.value
-                  ? 'bg-garden-500 text-white'
+                  ? 'bg-garden-500 text-white shadow-sm'
                   : 'bg-parchment-200 text-slate-600 hover:bg-parchment-300'
               }`}
             >
@@ -136,7 +136,7 @@ export function CourseBrowser({ courses, gradeProfile, poolCourseNames, placedCo
                 key={course.normalizedName}
                 onClick={() => onTogglePool(course)}
                 className={clsx(
-                  'w-full flex items-center gap-2 px-3 py-2.5 rounded-lg border-l-4 border border-slate-200 transition-all text-sm text-left',
+                  'w-full flex items-center gap-2 px-3 py-2.5 rounded-lg border-l-4 border border-slate-200 transition-all duration-200 text-sm text-left cursor-pointer',
                   colors.border,
                   colors.bg,
                   inPool && 'ring-2 ring-gold-400 border-gold-300 shadow-md',

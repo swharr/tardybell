@@ -75,10 +75,10 @@ export function CoursePool({ poolEntries, poolCourses, conflicts, onRemoveCourse
         <button
           onClick={onBuildSchedule}
           className={clsx(
-            'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all',
+            'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer',
             isScheduleBuilt
               ? 'bg-white/20 text-white hover:bg-white/30'
-              : 'bg-white text-gold-700 hover:bg-gold-50 shadow-md hover:shadow-lg',
+              : 'bg-white text-gold-700 hover:bg-gold-50 shadow-md hover:shadow-lg animate-pulse-soft',
           )}
         >
           <Sparkles className="h-4 w-4" />
@@ -127,7 +127,7 @@ export function CoursePool({ poolEntries, poolCourses, conflicts, onRemoveCourse
                     >
                       <button
                         onClick={() => onChangePriority(entry.normalizedName, cyclePriority(entry.priority, 'up'))}
-                        className="p-0.5 rounded-full hover:bg-black/10 transition-colors"
+                        className="p-0.5 rounded-full hover:bg-black/10 transition-colors cursor-pointer"
                         title="Higher priority"
                         disabled={priority === 'must'}
                       >
@@ -136,7 +136,7 @@ export function CoursePool({ poolEntries, poolCourses, conflicts, onRemoveCourse
                       <span className="truncate max-w-[140px]">{course.name}</span>
                       <button
                         onClick={() => onChangePriority(entry.normalizedName, cyclePriority(entry.priority, 'down'))}
-                        className="p-0.5 rounded-full hover:bg-black/10 transition-colors"
+                        className="p-0.5 rounded-full hover:bg-black/10 transition-colors cursor-pointer"
                         title="Lower priority"
                         disabled={priority === 'nice'}
                       >
@@ -144,7 +144,7 @@ export function CoursePool({ poolEntries, poolCourses, conflicts, onRemoveCourse
                       </button>
                       <button
                         onClick={() => onRemoveCourse(entry.normalizedName)}
-                        className="p-0.5 rounded-full hover:bg-black/10 transition-colors"
+                        className="p-0.5 rounded-full hover:bg-black/10 transition-colors cursor-pointer"
                         title="Remove"
                       >
                         <X className="h-3 w-3" />

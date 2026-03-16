@@ -7,9 +7,9 @@ type Props = {
 
 export function HelpModal({ onClose, isWelcome }: Props) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 modal-backdrop" onClick={onClose}>
       <div
-        className="bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[85vh] flex flex-col"
+        className="bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[85vh] flex flex-col modal-panel"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-parchment-200">
@@ -18,7 +18,7 @@ export function HelpModal({ onClose, isWelcome }: Props) {
           </h2>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg hover:bg-parchment-200 transition-colors"
+            className="p-1.5 rounded-lg hover:bg-parchment-200 transition-colors cursor-pointer"
           >
             <X className="h-5 w-5 text-slate-500" />
           </button>

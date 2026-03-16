@@ -7,7 +7,7 @@ interface MobileGateProps {
 export function MobileGate({ onDismiss }: MobileGateProps) {
   return (
     <div className="min-h-screen bg-parchment-100 flex items-center justify-center p-6 md:hidden">
-      <div className="bg-white rounded-2xl shadow-xl border border-parchment-300 w-full max-w-sm overflow-hidden text-center">
+      <div className="bg-white rounded-2xl shadow-xl border border-parchment-300 w-full max-w-sm overflow-hidden text-center modal-panel">
         <div className="bg-garden-700 text-white px-6 py-6">
           <Flower2 className="h-10 w-10 text-gold-400 mx-auto mb-3" />
           <h1 className="font-serif text-2xl font-bold tracking-tight">TardyBell</h1>
@@ -26,7 +26,7 @@ export function MobileGate({ onDismiss }: MobileGateProps) {
           </p>
           <button
             onClick={onDismiss}
-            className="w-full mt-2 px-4 py-2.5 bg-garden-100 hover:bg-garden-200 text-garden-700 text-sm font-medium rounded-lg transition-colors"
+            className="w-full mt-2 px-4 py-2.5 bg-garden-100 hover:bg-garden-200 text-garden-700 text-sm font-medium rounded-lg transition-all duration-200 cursor-pointer hover:shadow-sm"
           >
             OK fine, but let me see it 👀
           </button>

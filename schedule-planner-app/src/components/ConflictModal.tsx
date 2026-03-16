@@ -8,9 +8,9 @@ type Props = {
 
 export function ConflictModal({ conflicts, onClose, onAutoSchedule }: Props) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 modal-backdrop" onClick={onClose}>
       <div
-        className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 max-h-[85vh] flex flex-col"
+        className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 max-h-[85vh] flex flex-col modal-panel"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-berry-100">

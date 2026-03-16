@@ -33,7 +33,7 @@ export function SavedVersions({ versions, onSave, onLoad, onDelete }: Props) {
     <div className="bg-white rounded-xl shadow-md border border-parchment-300 overflow-hidden">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full px-4 py-2.5 flex items-center justify-between text-sm font-semibold text-slate-700 hover:bg-parchment-50 transition-colors"
+        className="w-full px-4 py-2.5 flex items-center justify-between text-sm font-semibold text-slate-700 hover:bg-parchment-50 transition-all duration-200 cursor-pointer"
       >
         <div className="flex items-center gap-2">
           <Bookmark className="h-4 w-4 text-garden-500" />

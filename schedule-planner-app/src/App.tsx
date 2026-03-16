@@ -455,7 +455,7 @@ function ScheduleBuilder({
               <span className="text-sm text-garden-200">{profile.name}</span>
               <button
                 onClick={() => { setIsWelcome(false); setShowHelp(true); }}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-garden-600 hover:bg-garden-500 rounded-lg text-sm text-garden-100 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-garden-600 hover:bg-garden-500 rounded-lg text-sm text-garden-100 transition-all duration-200 cursor-pointer hover:shadow-md"
                 title="How it works"
               >
                 <HelpCircle className="h-3.5 w-3.5" />
@@ -463,7 +463,7 @@ function ScheduleBuilder({
               </button>
               <button
                 onClick={onSwitchProfile}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-garden-600 hover:bg-garden-500 rounded-lg text-sm text-garden-100 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-garden-600 hover:bg-garden-500 rounded-lg text-sm text-garden-100 transition-all duration-200 cursor-pointer hover:shadow-md"
                 title="Switch profile"
               >
                 <LogOut className="h-3.5 w-3.5" />
@@ -515,7 +515,7 @@ function ScheduleBuilder({
               <ExportSchedule schedule={schedule} courseMap={courseMap} gradeProfile={gradeProfile} studentName={profile.name} />
               <button
                 onClick={handleResetSchedule}
-                className="flex items-center gap-1.5 px-4 py-2 bg-berry-100 text-berry-600 rounded-lg hover:bg-berry-200 transition-colors text-sm font-medium"
+                className="flex items-center gap-1.5 px-4 py-2 bg-berry-100 text-berry-600 rounded-lg hover:bg-berry-200 transition-all duration-200 text-sm font-medium cursor-pointer"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
                 JK – Reset
@@ -544,7 +544,7 @@ function ScheduleBuilder({
 
       <DragOverlay>
         {activeDrag ? (
-          <div className="px-3 py-2 bg-white shadow-xl rounded-lg border-2 border-garden-400 text-sm font-medium text-slate-700 max-w-[200px] truncate">
+          <div className="px-3 py-2 bg-white shadow-2xl rounded-lg border-2 border-garden-400 text-sm font-medium text-slate-700 max-w-[200px] truncate ring-4 ring-garden-100/50 rotate-1">
             {activeDrag.displayName}
           </div>
         ) : null}

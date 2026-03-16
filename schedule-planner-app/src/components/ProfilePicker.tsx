@@ -27,7 +27,7 @@ export function ProfilePicker({ profiles, onSelectProfile, onCreateProfile, onDe
 
   return (
     <div className="min-h-screen bg-parchment-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl border border-parchment-300 w-full max-w-md overflow-hidden">
+      <div className="bg-white rounded-2xl shadow-xl border border-parchment-300 w-full max-w-md overflow-hidden modal-panel">
         {/* Header */}
         <div className="bg-garden-700 text-white px-6 py-6 text-center">
           <Flower2 className="h-12 w-12 text-gold-400 mx-auto mb-3" />
@@ -47,7 +47,7 @@ export function ProfilePicker({ profiles, onSelectProfile, onCreateProfile, onDe
                 <div key={profile.id} className="relative group">
                   <button
                     onClick={() => onSelectProfile(profile)}
-                    className="w-full flex items-center gap-3 px-4 py-3 bg-parchment-50 border border-parchment-300 rounded-xl hover:bg-garden-50 hover:border-garden-300 transition-all text-left"
+                    className="w-full flex items-center gap-3 px-4 py-3 bg-parchment-50 border border-parchment-300 rounded-xl hover:bg-garden-50 hover:border-garden-300 hover:shadow-md transition-all duration-200 text-left cursor-pointer"
                   >
                     <div className="w-9 h-9 rounded-full bg-garden-100 flex items-center justify-center flex-shrink-0">
                       <User className="h-4 w-4 text-garden-600" />
@@ -98,7 +98,7 @@ export function ProfilePicker({ profiles, onSelectProfile, onCreateProfile, onDe
               <button
                 onClick={handleCreate}
                 disabled={!newName.trim()}
-                className="flex items-center gap-1.5 px-4 py-2 bg-garden-500 text-white rounded-lg hover:bg-garden-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-sm font-medium"
+                className="flex items-center gap-1.5 px-4 py-2 bg-garden-500 text-white rounded-lg hover:bg-garden-600 hover:shadow-md disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 text-sm font-medium cursor-pointer"
               >
                 <Plus className="h-4 w-4" />
                 Create
