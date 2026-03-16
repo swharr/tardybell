@@ -1,6 +1,10 @@
 import { Flower2, Monitor } from 'lucide-react';
 
-export function MobileGate() {
+interface MobileGateProps {
+  onDismiss: () => void;
+}
+
+export function MobileGate({ onDismiss }: MobileGateProps) {
   return (
     <div className="min-h-screen bg-parchment-100 flex items-center justify-center p-6 md:hidden">
       <div className="bg-white rounded-2xl shadow-xl border border-parchment-300 w-full max-w-sm overflow-hidden text-center">
@@ -20,6 +24,12 @@ export function MobileGate() {
           <p className="text-xs text-slate-400">
             Open this page on a tablet or laptop to get started.
           </p>
+          <button
+            onClick={onDismiss}
+            className="w-full mt-2 px-4 py-2.5 bg-garden-100 hover:bg-garden-200 text-garden-700 text-sm font-medium rounded-lg transition-colors"
+          >
+            OK fine, but let me see it 👀
+          </button>
           <div className="pt-2 border-t border-parchment-300">
             <p className="text-xs text-garden-600 font-medium">tardybell.t8rsk8s.io</p>
           </div>

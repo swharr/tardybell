@@ -580,6 +580,7 @@ function ScheduleBuilder({
 export default function App() {
   const [profiles, setProfiles] = useState<StudentProfile[]>(loadProfiles);
   const [activeProfileId, setActiveProfileId] = useState<string | null>(loadActiveProfileId);
+  const [mobileGateDismissed, setMobileGateDismissed] = useState(false);
 
   const activeProfile = profiles.find((p) => p.id === activeProfileId) ?? null;
 
@@ -630,8 +631,10 @@ export default function App() {
 
   return (
     <>
-      <MobileGate />
-      <div className="hidden md:flex md:flex-col md:min-h-screen">
+      {!mobileGateDismissed && (
+        <MobileGate onDismiss={() => setMobileGateDismissed(true)} />
+      )}
+      <div className={`${mobileGateDismissed ? 'flex' : 'hidden md:flex'} flex-col min-h-screen`}>
         <div className="flex-1">
           {!activeProfile ? (
             <ProfilePicker
