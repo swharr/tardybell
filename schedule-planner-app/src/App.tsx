@@ -1,7 +1,7 @@
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { DndContext, DragOverlay, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import type { DragStartEvent, DragEndEvent } from '@dnd-kit/core';
-import { LogOut, RotateCcw, HelpCircle } from 'lucide-react';
+import { LogOut, RotateCcw, HelpCircle, Cloud, CloudOff } from 'lucide-react';
 import type { CourseRecord, DayKey, GradeProfile, Period, ScheduleGrid, SemesterKey } from '@/types/schedule';
 import {
   buildCourseMap,
@@ -28,6 +28,8 @@ import { SavedVersions } from '@/components/SavedVersions';
 import type { SavedVersion } from '@/components/SavedVersions';
 import { HelpModal } from '@/components/HelpModal';
 import { ConflictModal } from '@/components/ConflictModal';
+import { pullProfile, pushProfile, deleteCloudProfile } from '@/utils/syncService';
+import type { CloudProfileData, CloudVersion } from '@/utils/syncService';
 import coursesData from '@/data/courses.json';
 
 const allCourses = coursesData as CourseRecord[];
@@ -127,6 +129,8 @@ function saveVersions(profileId: string, versions: SavedVersion[]) {
 }
 
 // --- Schedule Builder (inner app) ---
+type SyncStatus = 'idle' | 'syncing' | 'synced' | 'error';
+
 function ScheduleBuilder({
   profile,
   onSwitchProfile,
@@ -158,6 +162,8 @@ function ScheduleBuilder({
   const [showHelp, setShowHelp] = useState(false);
   const [savedVersions, setSavedVersions] = useState<SavedVersion[]>(() => loadVersions(profile.id));
   const [isWelcome, setIsWelcome] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>('idle');
+  const syncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Auto-show welcome modal for new users
   useEffect(() => {
@@ -250,10 +256,31 @@ function ScheduleBuilder({
     return valid;
   }, [activeDrag, coursesByName, schedule]);
 
-  // Persist on changes
+  // Persist on changes (localStorage + debounced cloud push)
   useEffect(() => {
-    saveProfileData(profile.id, { gradeProfile, schedule, completedCourseNames, poolEntries });
-  }, [profile.id, gradeProfile, schedule, completedCourseNames, poolEntries]);
+    const data: ProfileData = { gradeProfile, schedule, completedCourseNames, poolEntries, hasSeenWelcome: saved?.hasSeenWelcome };
+    saveProfileData(profile.id, data);
+
+    // Debounced cloud sync (2 seconds after last change)
+    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    syncTimerRef.current = setTimeout(() => {
+      setSyncStatus('syncing');
+      pushProfile(
+        profile.name,
+        data as unknown as CloudProfileData,
+        savedVersions as unknown as CloudVersion[],
+      ).then((ok) => {
+        setSyncStatus(ok ? 'synced' : 'error');
+        // Reset to idle after 3 seconds
+        setTimeout(() => setSyncStatus('idle'), 3000);
+      });
+    }, 2000);
+
+    return () => {
+      if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profile.id, profile.name, gradeProfile, schedule, completedCourseNames, poolEntries, savedVersions]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
@@ -452,7 +479,12 @@ function ScheduleBuilder({
           <div className="max-w-[1600px] mx-auto px-4 py-4 flex items-center justify-between">
             <ScheduleHeader gradeProfile={gradeProfile} onGradeChange={handleGradeChange} />
             <div className="flex items-center gap-3">
-              <span className="text-sm text-garden-200">{profile.name}</span>
+              <span className="flex items-center gap-1.5 text-sm text-garden-200">
+                {profile.name}
+                {syncStatus === 'syncing' && <span title="Syncing to cloud..."><Cloud className="h-3.5 w-3.5 text-garden-300 animate-pulse" /></span>}
+                {syncStatus === 'synced' && <span title="Saved to cloud"><Cloud className="h-3.5 w-3.5 text-gold-400" /></span>}
+                {syncStatus === 'error' && <span title="Sync failed — data saved locally"><CloudOff className="h-3.5 w-3.5 text-berry-300" /></span>}
+              </span>
               <button
                 onClick={() => { setIsWelcome(false); setShowHelp(true); }}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-garden-600 hover:bg-garden-500 rounded-lg text-sm text-garden-100 transition-all duration-200 cursor-pointer hover:shadow-md"
@@ -584,7 +616,7 @@ export default function App() {
 
   const activeProfile = profiles.find((p) => p.id === activeProfileId) ?? null;
 
-  const handleCreateProfile = useCallback((name: string) => {
+  const handleCreateProfile = useCallback(async (name: string) => {
     const newProfile: StudentProfile = {
       id: crypto.randomUUID(),
       name,
@@ -596,8 +628,16 @@ export default function App() {
     setActiveProfileId(newProfile.id);
     saveActiveProfileId(newProfile.id);
 
-    // Pre-populate Abigail's completed courses if name matches
-    if (name.toLowerCase().includes('abigail') || name.toLowerCase().includes('abi')) {
+    // Check cloud for existing data under this name
+    const cloud = await pullProfile(name);
+    if (cloud?.profile) {
+      // Restore from cloud — this is a returning user on a new device
+      saveProfileData(newProfile.id, cloud.profile as unknown as ProfileData);
+      if (cloud.versions) {
+        saveVersions(newProfile.id, cloud.versions as unknown as SavedVersion[]);
+      }
+    } else if (name.toLowerCase().includes('abigail') || name.toLowerCase().includes('abi')) {
+      // Pre-populate Abigail's completed courses if name matches
       const data: ProfileData = {
         gradeProfile: '11',
         schedule: createEmptyScheduleGrid(),
@@ -608,19 +648,34 @@ export default function App() {
     }
   }, [profiles]);
 
-  const handleSelectProfile = useCallback((profile: StudentProfile) => {
+  const handleSelectProfile = useCallback(async (profile: StudentProfile) => {
     setActiveProfileId(profile.id);
     saveActiveProfileId(profile.id);
+
+    // Pull latest from cloud (overwrites local if cloud data exists)
+    const cloud = await pullProfile(profile.name);
+    if (cloud?.profile) {
+      saveProfileData(profile.id, cloud.profile as unknown as ProfileData);
+      if (cloud.versions) {
+        saveVersions(profile.id, cloud.versions as unknown as SavedVersion[]);
+      }
+    }
   }, []);
 
   const handleDeleteProfile = useCallback((id: string) => {
+    const deletedProfile = profiles.find((p) => p.id === id);
     const updated = profiles.filter((p) => p.id !== id);
     setProfiles(updated);
     saveProfiles(updated);
     localStorage.removeItem(profileKey(id));
+    localStorage.removeItem(versionsKey(id));
     if (activeProfileId === id) {
       setActiveProfileId(null);
       saveActiveProfileId(null);
+    }
+    // Also delete from cloud
+    if (deletedProfile) {
+      deleteCloudProfile(deletedProfile.name);
     }
   }, [profiles, activeProfileId]);
 
