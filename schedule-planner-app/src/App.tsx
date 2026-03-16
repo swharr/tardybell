@@ -208,17 +208,7 @@ function ScheduleBuilder({
     [poolCourseNames, gradeProfile],
   );
 
-  const filledSlotCount = useMemo(() => {
-    let count = 0;
-    for (const sem of ['sem1', 'sem2'] as const) {
-      for (const day of ['A', 'B'] as const) {
-        for (const p of [1, 2, 3, 4, 5, 6, 7, 8] as const) {
-          if (schedule[sem][day][p]) count++;
-        }
-      }
-    }
-    return count;
-  }, [schedule]);
+
 
   const lockedSlots = useMemo(() => {
     const locked = new Set<string>();

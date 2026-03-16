@@ -1,46 +1,16 @@
 import type {
   CourseRecord,
   GradeProfile,
-  Period,
   ScheduleGrid,
-  SemesterKey,
 } from '@/types/schedule';
 import { createEmptyScheduleGrid, groupCoursesByNormalizedName } from '@/utils/courseUtils';
 
-type Slot = {
-  semester: SemesterKey;
-  day: 'A' | 'B';
-  period: Period;
-};
-
-const SLOT_ORDER: Slot[] = [
-  { semester: 'sem1', day: 'A', period: 1 },
-  { semester: 'sem1', day: 'A', period: 2 },
-  { semester: 'sem1', day: 'A', period: 3 },
-  { semester: 'sem1', day: 'A', period: 4 },
-  { semester: 'sem1', day: 'B', period: 5 },
-  { semester: 'sem1', day: 'B', period: 6 },
-  { semester: 'sem1', day: 'B', period: 7 },
-  { semester: 'sem1', day: 'B', period: 8 },
-  { semester: 'sem2', day: 'A', period: 1 },
-  { semester: 'sem2', day: 'A', period: 2 },
-  { semester: 'sem2', day: 'A', period: 3 },
-  { semester: 'sem2', day: 'A', period: 4 },
-  { semester: 'sem2', day: 'B', period: 5 },
-  { semester: 'sem2', day: 'B', period: 6 },
-  { semester: 'sem2', day: 'B', period: 7 },
-  { semester: 'sem2', day: 'B', period: 8 },
-];
 
 function cloneSchedule(schedule: ScheduleGrid): ScheduleGrid {
   return {
     sem1: { A: { ...schedule.sem1.A }, B: { ...schedule.sem1.B } },
     sem2: { A: { ...schedule.sem2.A }, B: { ...schedule.sem2.B } },
   };
-}
-
-function slotIsFree(schedule: ScheduleGrid, slot: Slot): boolean {
-  return !schedule[slot.semester][slot.day][slot.period];
 }
 
 function placeCourse(schedule: ScheduleGrid, course: CourseRecord): ScheduleGrid {
@@ -54,12 +24,6 @@ function placeCourse(schedule: ScheduleGrid, course: CourseRecord): ScheduleGrid
     next.sem2[course.day][course.period] = course.id;
   }
   return next;
-}
-
-function sectionFitsSlot(course: CourseRecord, slot: Slot): boolean {
-  if (course.day !== slot.day || course.period !== slot.period) return false;
-  if (course.semester === 'Both') return slot.semester === 'sem1';
-  return course.semester === (slot.semester === 'sem1' ? 'S1' : 'S2');
 }
 
 function canPlaceSection(schedule: ScheduleGrid, course: CourseRecord): boolean {
@@ -114,7 +78,7 @@ export function buildScheduleFromPool(
   poolNames: string[],
   allCourses: CourseRecord[],
   gradeProfile: GradeProfile,
-  completedCourseNames: string[],
+  _completedCourseNames: string[],
   priorityGroups?: { must: string[]; want: string[]; nice: string[] },
 ): PoolScheduleResult {
   const coursesByName = groupCoursesByNormalizedName(allCourses);
@@ -194,10 +158,10 @@ export function buildScheduleFromPool(
   backtrack(0, {
     schedule: createEmptyScheduleGrid(),
     placed: [],
-    placedIds: new Set(),
+    placedIds: new Set<string>(),
   });
 
-  const result = bestResult ?? { schedule: createEmptyScheduleGrid(), placed: [], placedIds: new Set<string>() };
+  const result = bestResult ?? { schedule: createEmptyScheduleGrid(), placed: [] as string[], placedIds: new Set<string>() };
   const placedSet = new Set(result.placed);
   const unplaced = poolNames.filter((n) => !placedSet.has(n));
 
