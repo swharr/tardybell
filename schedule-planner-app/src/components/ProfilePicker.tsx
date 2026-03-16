@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Flower2, Plus, Trash2, User } from 'lucide-react';
+import { Cloud, Flower2, Plus, Trash2, User } from 'lucide-react';
 
 export type StudentProfile = {
   id: string;
@@ -84,7 +84,15 @@ export function ProfilePicker({ profiles, onSelectProfile, onCreateProfile, onDe
 
           {/* Create new */}
           <div className="border-t border-parchment-300 pt-4">
-            <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">New Profile</p>
+            <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">
+              {profiles.length === 0 ? 'Get Started' : 'New Profile'}
+            </p>
+            <div className="flex items-start gap-2 mb-3 p-2.5 bg-garden-50 border border-garden-200 rounded-lg">
+              <Cloud className="h-4 w-4 text-garden-500 mt-0.5 flex-shrink-0" />
+              <p className="text-xs text-garden-700">
+                <span className="font-medium">New device?</span> Just type the same first name you used before — your schedule will sync automatically from the cloud.
+              </p>
+            </div>
             <div className="flex gap-2">
               <input
                 type="text"

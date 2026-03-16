@@ -625,13 +625,11 @@ export default function App() {
     const updated = [...profiles, newProfile];
     setProfiles(updated);
     saveProfiles(updated);
-    setActiveProfileId(newProfile.id);
-    saveActiveProfileId(newProfile.id);
 
-    // Check cloud for existing data under this name
+    // Pull from cloud FIRST (before activating profile, so ScheduleBuilder reads fresh data)
     const cloud = await pullProfile(name);
     if (cloud?.profile) {
-      // Restore from cloud — this is a returning user on a new device
+      // Restore from cloud — returning user on a new device
       saveProfileData(newProfile.id, cloud.profile as unknown as ProfileData);
       if (cloud.versions) {
         saveVersions(newProfile.id, cloud.versions as unknown as SavedVersion[]);
@@ -646,13 +644,14 @@ export default function App() {
       };
       saveProfileData(newProfile.id, data);
     }
+
+    // NOW activate — ScheduleBuilder mounts with cloud data already in localStorage
+    setActiveProfileId(newProfile.id);
+    saveActiveProfileId(newProfile.id);
   }, [profiles]);
 
   const handleSelectProfile = useCallback(async (profile: StudentProfile) => {
-    setActiveProfileId(profile.id);
-    saveActiveProfileId(profile.id);
-
-    // Pull latest from cloud (overwrites local if cloud data exists)
+    // Pull from cloud FIRST (before activating, so ScheduleBuilder reads fresh data)
     const cloud = await pullProfile(profile.name);
     if (cloud?.profile) {
       saveProfileData(profile.id, cloud.profile as unknown as ProfileData);
@@ -660,6 +659,10 @@ export default function App() {
         saveVersions(profile.id, cloud.versions as unknown as SavedVersion[]);
       }
     }
+
+    // NOW activate
+    setActiveProfileId(profile.id);
+    saveActiveProfileId(profile.id);
   }, []);
 
   const handleDeleteProfile = useCallback((id: string) => {
