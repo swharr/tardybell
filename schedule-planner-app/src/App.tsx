@@ -171,8 +171,7 @@ function ScheduleBuilder({
       setIsWelcome(true);
       setShowHelp(true);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); // Run once on mount
 
   const courseMap = useMemo(() => buildCourseMap(allCourses), []);
   const coursesByName = useMemo(() => groupCoursesByNormalizedName(allCourses), []);
@@ -279,8 +278,7 @@ function ScheduleBuilder({
     return () => {
       if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [profile.id, profile.name, gradeProfile, schedule, completedCourseNames, poolEntries, savedVersions]);
+  }, [profile.id, profile.name, gradeProfile, schedule, completedCourseNames, poolEntries, savedVersions]); // Sync on any data change
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
