@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useDroppable } from '@dnd-kit/core';
-import { X, Clock, User } from 'lucide-react';
+import { useDroppable, useDraggable } from '@dnd-kit/core';
+import { X, Clock, User, GripVertical } from 'lucide-react';
 import clsx from 'clsx';
 import type { CourseRecord, DayKey, Period, SemesterKey } from '@/types/schedule';
 
@@ -31,14 +31,38 @@ const periodTimes: Record<number, string> = {
 export function DroppableSlot({ semester, day, period, course, isLocked, canPlace, isDragTarget, isDragging, onRemove, onClickPlace }: Props) {
   const [showDetails, setShowDetails] = useState(false);
   const slotId = `slot-${semester}-${day}-${period}`;
-  const { isOver, setNodeRef } = useDroppable({
+  const { isOver, setNodeRef: setDropRef } = useDroppable({
     id: slotId,
     data: { semester, day, period },
   });
 
+  // Make occupied (non-locked) slots draggable for grid-to-grid moves
+  const dragId = `grid-${semester}-${day}-${period}`;
+  const { attributes, listeners, setNodeRef: setDragRef, transform, isDragging: isThisDragging } = useDraggable({
+    id: dragId,
+    data: {
+      normalizedName: course?.normalizedName ?? '',
+      displayName: course?.name ?? '',
+      requirementArea: course?.requirementArea ?? '',
+      fromSlot: { semester, day, period },
+    },
+    disabled: !course || isLocked,
+  });
+
+  const dragStyle = transform
+    ? { transform: `translate(${transform.x}px, ${transform.y}px)`, zIndex: 50 }
+    : undefined;
+
+  // Merge refs: both droppable and draggable need to attach to the same DOM node
+  const setNodeRef = (el: HTMLElement | null) => {
+    setDropRef(el);
+    setDragRef(el);
+  };
+
   return (
     <div
       ref={setNodeRef}
+      style={dragStyle}
       onClick={() => {
         if (canPlace && !course) {
           onClickPlace();
@@ -49,7 +73,7 @@ export function DroppableSlot({ semester, day, period, course, isLocked, canPlac
       className={clsx(
         'relative group min-h-[64px] rounded-lg border-2 transition-all',
         course
-          ? 'border-solid border-garden-300 bg-white shadow-sm cursor-pointer hover:shadow-md'
+          ? 'border-solid border-garden-300 bg-white shadow-sm cursor-grab active:cursor-grabbing hover:shadow-md'
           : canPlace
             ? 'border-dashed border-gold-400 bg-gold-50 cursor-pointer hover:bg-gold-100 animate-pulse'
             : 'border-dashed border-parchment-400 bg-parchment-50',
@@ -57,15 +81,27 @@ export function DroppableSlot({ semester, day, period, course, isLocked, canPlac
         isDragging && !course && isDragTarget && 'border-gold-400 bg-gold-50 border-dashed scale-[1.02] shadow-md',
         isDragging && !course && !isDragTarget && 'opacity-40',
         isDragging && course && !isDragTarget && 'opacity-60',
+        isDragging && course && isDragTarget && 'border-gold-400 scale-[1.02] shadow-md',
         // Hover feedback during drag
-        isOver && !course && isDragTarget && 'border-gold-500 bg-gold-100 scale-[1.04] shadow-lg',
+        isOver && isDragTarget && 'border-gold-500 bg-gold-100 scale-[1.04] shadow-lg',
         isOver && !isDragTarget && 'border-berry-400 bg-berry-50',
         isLocked && 'border-solid border-garden-200 bg-garden-50/50 cursor-default',
+        isThisDragging && 'opacity-50 shadow-lg scale-105',
       )}
     >
       {course ? (
         <div className="px-2.5 py-2">
           <div className="flex items-start justify-between gap-1">
+            {!isLocked && (
+              <div
+                {...listeners}
+                {...attributes}
+                className="flex-shrink-0 mt-0.5 cursor-grab active:cursor-grabbing touch-none"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <GripVertical className="h-3.5 w-3.5 text-slate-300 group-hover:text-slate-500 transition-colors" />
+              </div>
+            )}
             <div className="min-w-0 flex-1">
               <p className="text-sm font-semibold text-slate-800 truncate">{course.name}</p>
               <div className="flex items-center gap-1.5 mt-0.5">

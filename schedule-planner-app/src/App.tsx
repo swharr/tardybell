@@ -142,7 +142,7 @@ function ScheduleBuilder({
   const [gradeProfile, setGradeProfile] = useState<GradeProfile>(saved?.gradeProfile ?? '11');
   const [schedule, setSchedule] = useState<ScheduleGrid>(saved?.schedule ?? createEmptyScheduleGrid());
   const [poolEntries, setPoolEntries] = useState<PoolEntry[]>(saved?.poolEntries ?? []);
-  const [activeDrag, setActiveDrag] = useState<{ normalizedName: string; displayName: string } | null>(null);
+  const [activeDrag, setActiveDrag] = useState<{ normalizedName: string; displayName: string; fromSlot?: { semester: SemesterKey; day: DayKey; period: Period } } | null>(null);
   const [completedCourseNames, setCompletedCourseNames] = useState<string[]>(
     saved?.completedCourseNames ?? [],
   );
@@ -238,17 +238,26 @@ function ScheduleBuilder({
     const valid = new Set<string>();
     if (!activeDrag) return valid;
     const sections = coursesByName[activeDrag.normalizedName] ?? [];
+    const isGridDrag = !!activeDrag.fromSlot;
     for (const section of sections) {
       if (section.semester === 'Both' || section.semester === 'S1') {
-        if (!schedule.sem1[section.day][section.period]) {
-          if (section.semester === 'Both' && schedule.sem2[section.day][section.period]) continue;
-          valid.add(`sem1-${section.day}-${section.period}`);
+        const slotKey = `sem1-${section.day}-${section.period}`;
+        const occupied = schedule.sem1[section.day][section.period];
+        if (!occupied || isGridDrag) {
+          // Skip if "Both" and the other semester is occupied by a different course
+          if (section.semester === 'Both' && schedule.sem2[section.day][section.period] && !isGridDrag) continue;
+          // Don't highlight the source slot itself
+          if (activeDrag.fromSlot && `${activeDrag.fromSlot.semester}-${activeDrag.fromSlot.day}-${activeDrag.fromSlot.period}` === slotKey) continue;
+          valid.add(slotKey);
         }
       }
       if (section.semester === 'Both' || section.semester === 'S2') {
-        if (!schedule.sem2[section.day][section.period]) {
-          if (section.semester === 'Both' && schedule.sem1[section.day][section.period]) continue;
-          valid.add(`sem2-${section.day}-${section.period}`);
+        const slotKey = `sem2-${section.day}-${section.period}`;
+        const occupied = schedule.sem2[section.day][section.period];
+        if (!occupied || isGridDrag) {
+          if (section.semester === 'Both' && schedule.sem1[section.day][section.period] && !isGridDrag) continue;
+          if (activeDrag.fromSlot && `${activeDrag.fromSlot.semester}-${activeDrag.fromSlot.day}-${activeDrag.fromSlot.period}` === slotKey) continue;
+          valid.add(slotKey);
         }
       }
     }
@@ -377,21 +386,103 @@ function ScheduleBuilder({
   const handleDragStart = useCallback((event: DragStartEvent) => {
     const data = event.active.data.current;
     if (data?.normalizedName) {
-      setActiveDrag({ normalizedName: data.normalizedName, displayName: data.displayName });
+      setActiveDrag({
+        normalizedName: data.normalizedName,
+        displayName: data.displayName,
+        fromSlot: data.fromSlot as { semester: SemesterKey; day: DayKey; period: Period } | undefined,
+      });
     }
   }, []);
 
   const handleDragEnd = useCallback(
     (event: DragEndEvent) => {
+      const currentDrag = activeDrag;
       setActiveDrag(null);
       const { over } = event;
       if (!over?.data.current) return;
       const dragData = event.active.data.current;
       if (!dragData?.normalizedName) return;
-      const { semester, day, period } = over.data.current as { semester: SemesterKey; day: DayKey; period: Period };
-      placeCourseInSlot(dragData.normalizedName as string, semester, day, period);
+      const target = over.data.current as { semester: SemesterKey; day: DayKey; period: Period };
+
+      // Grid-to-grid move (drag from one slot to another)
+      if (currentDrag?.fromSlot) {
+        const src = currentDrag.fromSlot;
+        // Don't drop on self
+        if (src.semester === target.semester && src.day === target.day && src.period === target.period) return;
+
+        const srcCourseId = schedule[src.semester][src.day][src.period];
+        const targetCourseId = schedule[target.semester][target.day][target.period];
+        if (!srcCourseId) return;
+
+        const srcCourse = courseMap[srcCourseId];
+
+        // Find a section of the dragged course that fits the target slot
+        const srcName = srcCourse?.normalizedName ?? currentDrag.normalizedName;
+        const srcSections = coursesByName[srcName] ?? [];
+        const targetSection = srcSections.find(
+          (s) =>
+            s.period === target.period &&
+            s.day === target.day &&
+            (s.semester === 'Both' || s.semester === (target.semester === 'sem1' ? 'S1' : 'S2')),
+        );
+
+        if (!targetSection) return; // no valid section at target — move rejected
+
+        // If target slot is occupied, try to swap
+        if (targetCourseId) {
+          const targetCourse = courseMap[targetCourseId];
+          const targetName = targetCourse?.normalizedName ?? '';
+          const targetSections = coursesByName[targetName] ?? [];
+          const swapSection = targetSections.find(
+            (s) =>
+              s.period === src.period &&
+              s.day === src.day &&
+              (s.semester === 'Both' || s.semester === (src.semester === 'sem1' ? 'S1' : 'S2')),
+          );
+
+          if (!swapSection) return; // can't swap — the other course has no section at the source slot
+
+          // Perform swap
+          let next = setSlotCourseId(schedule, src.semester, src.day, src.period, swapSection.id);
+          next = setSlotCourseId(next, target.semester, target.day, target.period, targetSection.id);
+
+          // Handle "Both" semester courses
+          if (targetSection.semester === 'Both') {
+            const otherSem: SemesterKey = target.semester === 'sem1' ? 'sem2' : 'sem1';
+            next = setSlotCourseId(next, otherSem, target.day, target.period, targetSection.id);
+          }
+          if (swapSection.semester === 'Both') {
+            const otherSem: SemesterKey = src.semester === 'sem1' ? 'sem2' : 'sem1';
+            next = setSlotCourseId(next, otherSem, src.day, src.period, swapSection.id);
+          }
+
+          setSchedule(next);
+        } else {
+          // Move to empty slot: clear source, place at target
+          let next = setSlotCourseId(schedule, src.semester, src.day, src.period, null);
+
+          // Clear "Both" source mirror
+          if (srcCourse?.semester === 'Both') {
+            const otherSem: SemesterKey = src.semester === 'sem1' ? 'sem2' : 'sem1';
+            next = setSlotCourseId(next, otherSem, src.day, src.period, null);
+          }
+
+          // Place at target
+          next = setSlotCourseId(next, target.semester, target.day, target.period, targetSection.id);
+          if (targetSection.semester === 'Both') {
+            const otherSem: SemesterKey = target.semester === 'sem1' ? 'sem2' : 'sem1';
+            next = setSlotCourseId(next, otherSem, target.day, target.period, targetSection.id);
+          }
+
+          setSchedule(next);
+        }
+        return;
+      }
+
+      // Browser-to-grid drag (existing behavior)
+      placeCourseInSlot(dragData.normalizedName as string, target.semester, target.day, target.period);
     },
-    [placeCourseInSlot],
+    [activeDrag, placeCourseInSlot, schedule, courseMap, coursesByName],
   );
 
   const handleClickPlace = useCallback(
