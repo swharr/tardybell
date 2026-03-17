@@ -1,6 +1,7 @@
-import { FileDown } from 'lucide-react';
+import { FileDown, FileSpreadsheet } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import * as XLSX from 'xlsx';
 import type { CourseRecord, DayKey, Period, ScheduleGrid, SemesterKey } from '@/types/schedule';
 import { getSlotCourseId } from '@/utils/courseUtils';
 
@@ -131,14 +132,102 @@ function exportPDF(schedule: ScheduleGrid, courseMap: Record<string, CourseRecor
   doc.save(fileName);
 }
 
+function getCourseName(schedule: ScheduleGrid, courseMap: Record<string, CourseRecord>, sem: SemesterKey, day: DayKey, period: Period): string {
+  const id = getSlotCourseId(schedule, sem, day, period);
+  if (!id) return '';
+  const course = courseMap[id];
+  return course ? course.name : '';
+}
+
+function getTeacher(schedule: ScheduleGrid, courseMap: Record<string, CourseRecord>, sem: SemesterKey, day: DayKey, period: Period): string {
+  const id = getSlotCourseId(schedule, sem, day, period);
+  if (!id) return '';
+  const course = courseMap[id];
+  return course ? course.teacher : '';
+}
+
+function exportXLSX(schedule: ScheduleGrid, courseMap: Record<string, CourseRecord>, gradeProfile: string, studentName: string) {
+  const wb = XLSX.utils.book_new();
+
+  // -- Semester 1 sheet --
+  const sem1Data: (string | number)[][] = [
+    ['TardyBell — Timpanogos High School 2026-2027'],
+    [`${studentName}  |  Grade ${gradeProfile}`],
+    [],
+    ['Semester 1'],
+    ['Period', 'Time', 'A-Day Course', 'A-Day Teacher', 'B-Day Course', 'B-Day Teacher'],
+  ];
+
+  for (let i = 0; i < 4; i++) {
+    const aP = A_PERIODS[i];
+    const bP = B_PERIODS[i];
+    sem1Data.push([
+      `P${aP}`,
+      periodTimes[aP],
+      getCourseName(schedule, courseMap, 'sem1', 'A', aP),
+      getTeacher(schedule, courseMap, 'sem1', 'A', aP),
+      getCourseName(schedule, courseMap, 'sem1', 'B', bP),
+      getTeacher(schedule, courseMap, 'sem1', 'B', bP),
+    ]);
+  }
+
+  sem1Data.push([], ['Semester 2']);
+  sem1Data.push(['Period', 'Time', 'A-Day Course', 'A-Day Teacher', 'B-Day Course', 'B-Day Teacher']);
+
+  for (let i = 0; i < 4; i++) {
+    const aP = A_PERIODS[i];
+    const bP = B_PERIODS[i];
+    sem1Data.push([
+      `P${aP}`,
+      periodTimes[aP],
+      getCourseName(schedule, courseMap, 'sem2', 'A', aP),
+      getTeacher(schedule, courseMap, 'sem2', 'A', aP),
+      getCourseName(schedule, courseMap, 'sem2', 'B', bP),
+      getTeacher(schedule, courseMap, 'sem2', 'B', bP),
+    ]);
+  }
+
+  const ws = XLSX.utils.aoa_to_sheet(sem1Data);
+
+  // Column widths
+  ws['!cols'] = [
+    { wch: 8 },   // Period
+    { wch: 12 },  // Time
+    { wch: 30 },  // A-Day Course
+    { wch: 20 },  // A-Day Teacher
+    { wch: 30 },  // B-Day Course
+    { wch: 20 },  // B-Day Teacher
+  ];
+
+  // Merge the title and name rows across all columns
+  ws['!merges'] = [
+    { s: { r: 0, c: 0 }, e: { r: 0, c: 5 } },
+    { s: { r: 1, c: 0 }, e: { r: 1, c: 5 } },
+  ];
+
+  XLSX.utils.book_append_sheet(wb, ws, 'Schedule');
+
+  const fileName = `${studentName.replace(/\s+/g, '_')}_Schedule_2026-2027.xlsx`;
+  XLSX.writeFile(wb, fileName);
+}
+
 export function ExportSchedule({ schedule, courseMap, gradeProfile, studentName }: Props) {
   return (
-    <button
-      onClick={() => exportPDF(schedule, courseMap, gradeProfile, studentName)}
-      className="flex items-center gap-2 px-4 py-2 bg-garden-500 text-white rounded-lg hover:bg-garden-600 transition-colors text-sm font-medium shadow-sm"
-    >
-      <FileDown className="h-4 w-4" />
-      Download PDF
-    </button>
+    <div className="flex items-center gap-2">
+      <button
+        onClick={() => exportPDF(schedule, courseMap, gradeProfile, studentName)}
+        className="flex items-center gap-2 px-4 py-2 bg-garden-500 text-white rounded-lg hover:bg-garden-600 transition-colors text-sm font-medium shadow-sm cursor-pointer"
+      >
+        <FileDown className="h-4 w-4" />
+        PDF
+      </button>
+      <button
+        onClick={() => exportXLSX(schedule, courseMap, gradeProfile, studentName)}
+        className="flex items-center gap-2 px-4 py-2 bg-garden-500 text-white rounded-lg hover:bg-garden-600 transition-colors text-sm font-medium shadow-sm cursor-pointer"
+      >
+        <FileSpreadsheet className="h-4 w-4" />
+        Excel
+      </button>
+    </div>
   );
 }
