@@ -415,6 +415,7 @@ function ScheduleBuilder({
         if (!srcCourseId) return;
 
         const srcCourse = courseMap[srcCourseId];
+        const isSrcBoth = srcCourse?.semester === 'Both';
 
         // Find a section of the dragged course that fits the target slot
         const srcName = srcCourse?.normalizedName ?? currentDrag.normalizedName;
@@ -427,6 +428,7 @@ function ScheduleBuilder({
         );
 
         if (!targetSection) return; // no valid section at target — move rejected
+        const isTargetBoth = targetSection.semester === 'Both';
 
         // If target slot is occupied, try to swap
         if (targetCourseId) {
@@ -441,35 +443,54 @@ function ScheduleBuilder({
           );
 
           if (!swapSection) return; // can't swap — the other course has no section at the source slot
+          const isSwapBoth = swapSection.semester === 'Both';
 
-          // Perform swap
-          let next = setSlotCourseId(schedule, src.semester, src.day, src.period, swapSection.id);
+          // Perform swap — clear both source slots first, then place both
+          let next = schedule;
+
+          // Clear source slots
+          next = setSlotCourseId(next, src.semester, src.day, src.period, null);
+          if (isSrcBoth) {
+            const otherSem: SemesterKey = src.semester === 'sem1' ? 'sem2' : 'sem1';
+            next = setSlotCourseId(next, otherSem, src.day, src.period, null);
+          }
+
+          // Clear target slots
+          next = setSlotCourseId(next, target.semester, target.day, target.period, null);
+          if (targetCourse?.semester === 'Both') {
+            const otherSem: SemesterKey = target.semester === 'sem1' ? 'sem2' : 'sem1';
+            next = setSlotCourseId(next, otherSem, target.day, target.period, null);
+          }
+
+          // Place dragged course at target
           next = setSlotCourseId(next, target.semester, target.day, target.period, targetSection.id);
-
-          // Handle "Both" semester courses
-          if (targetSection.semester === 'Both') {
+          if (isTargetBoth) {
             const otherSem: SemesterKey = target.semester === 'sem1' ? 'sem2' : 'sem1';
             next = setSlotCourseId(next, otherSem, target.day, target.period, targetSection.id);
           }
-          if (swapSection.semester === 'Both') {
+
+          // Place swapped course at source
+          next = setSlotCourseId(next, src.semester, src.day, src.period, swapSection.id);
+          if (isSwapBoth) {
             const otherSem: SemesterKey = src.semester === 'sem1' ? 'sem2' : 'sem1';
             next = setSlotCourseId(next, otherSem, src.day, src.period, swapSection.id);
           }
 
           setSchedule(next);
         } else {
-          // Move to empty slot: clear source, place at target
-          let next = setSlotCourseId(schedule, src.semester, src.day, src.period, null);
+          // Move to empty slot: clear all source slots first, then place at target
+          let next = schedule;
 
-          // Clear "Both" source mirror
-          if (srcCourse?.semester === 'Both') {
+          // Clear source (both semesters for "Both" courses)
+          next = setSlotCourseId(next, src.semester, src.day, src.period, null);
+          if (isSrcBoth) {
             const otherSem: SemesterKey = src.semester === 'sem1' ? 'sem2' : 'sem1';
             next = setSlotCourseId(next, otherSem, src.day, src.period, null);
           }
 
-          // Place at target
+          // Place at target (both semesters for "Both" courses)
           next = setSlotCourseId(next, target.semester, target.day, target.period, targetSection.id);
-          if (targetSection.semester === 'Both') {
+          if (isTargetBoth) {
             const otherSem: SemesterKey = target.semester === 'sem1' ? 'sem2' : 'sem1';
             next = setSlotCourseId(next, otherSem, target.day, target.period, targetSection.id);
           }
